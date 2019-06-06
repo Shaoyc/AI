@@ -37,20 +37,26 @@ Opencv 3.4.1
 ## 代码详解
 ```
 #coding=utf-8
-#表情识别
+#状态预测
 
+#导入相关资源
 import cv2
 from keras.models import load_model
 import numpy as np
 import chineseText
 import datetime
 
+#记录项目开始时间
 startTime = datetime.datetime.now()
+#导入模型文件
 emotion_classifier = load_model(
     'model/simple_CNN.530-0.65.hdf5')
+#记录项目结束时间
 endTime = datetime.datetime.now()
+#时间信息
 print(endTime - startTime)
 
+#建立状态标签
 emotion_labels = {
     0: '生气',
     1: '厌恶',
@@ -61,28 +67,44 @@ emotion_labels = {
     6: '平静'
 }
 
+#调用cv函数读入图片
 img = cv2.imread("img/emotion.png")
+#建立cv中的级联分类器
 face_classifier = cv2.CascadeClassifier(
     "C:\Python36\Lib\site-packages\opencv-master\data\haarcascades\haarcascade_frontalface_default.xml"
 )
+#调用cv中的cvtColor函数进行图片色彩空间转换（灰度化）
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#调用模型中的detectMultiScale函数进行对尺度检测
 faces = face_classifier.detectMultiScale(
     gray, scaleFactor=1.2, minNeighbors=3, minSize=(40, 40))
 color = (255, 0, 0)
 
+#遍历像素
 for (x, y, w, h) in faces:
     gray_face = gray[(y):(y + h), (x):(x + w)]
+    #设置图片大小
     gray_face = cv2.resize(gray_face, (48, 48))
+    #图像归一化处理
     gray_face = gray_face / 255.0
+    #np.expand_dims:用于扩展数组的形状
+    #np.expand_dims(a, axis=0)表示在0位置添加数据
     gray_face = np.expand_dims(gray_face, 0)
+    #np.expand_dims(a, axis=1)表示在1位置添加数据
     gray_face = np.expand_dims(gray_face, -1)
+    #np.argmax() 返回最大值索引号（模型输出结果）
     emotion_label_arg = np.argmax(emotion_classifier.predict(gray_face))
+    #获取情绪标签
     emotion = emotion_labels[emotion_label_arg]
+    #在图片上画出矩形
     cv2.rectangle(img, (x + 10, y + 10), (x + h - 10, y + w - 10),
                   (255, 255, 255), 2)
+    #调用cv函数在图片上添加文字
     img = chineseText.cv2ImgAddText(img, emotion, x + h * 0.3, y, color, 20)
-
+    
+#cv2.imShow()函数可以在窗口中显示图像。
 cv2.imshow("Image", img)
+#waitKey()函数的功能是不断刷新图像，频率时间为delay，单位为ms。
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
