@@ -37,7 +37,6 @@ Opencv 3.4.1
 ```
 # -*- coding:utf-8 -*-
 import cv2
-# 图片识别方法封装
 def discern(img):
     #灰度化
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
