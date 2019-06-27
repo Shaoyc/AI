@@ -14,6 +14,8 @@
 
 #### 0、MachineLearning（不定期更新）
 
+#### 0、ComputerVision（不定期更新）
+
 ## 【概述】
 
 #### 1、基于人脸识别的驾驶员状态预警系统
@@ -48,7 +50,11 @@
   
 #### 0、MachineLearning（不定期更新）
 
-  笔记&随笔位于MachineLearning文件夹中
+  机器学习笔记&随笔位于MachineLearning文件夹
+  
+#### 0、ComputerVision（不定期更新）
+  
+  整理的计算机视觉纲要位于ComputerVision文件夹
   
 ## 【说明】
 
