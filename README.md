@@ -14,6 +14,8 @@
 
 #### 0、MachineLearning（不定期更新）
 
+#### 0、DeepLearning（不定期更新）
+
 #### 0、ComputerVision（不定期更新）
 
 ## 【概述】
@@ -51,6 +53,10 @@
 #### 0、MachineLearning（不定期更新）
 
   机器学习笔记&随笔位于MachineLearning文件夹
+
+#### 0、DeepLearning（不定期更新）
+
+  深度学习整理资料位于DeepLearning文件夹
   
 #### 0、ComputerVision（不定期更新）
   
