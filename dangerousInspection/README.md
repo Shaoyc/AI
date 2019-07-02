@@ -121,7 +121,7 @@ Ubuntu 默认安装了 Python2.7 和 3.5，在此我们选用 python3.6.0 作为
 
 到项目文件夹中打开终端，输入命令
 
-    python deeplearning.py --image images/1_test.jpeg --model xception
+    python dangerousInspection.py --image images/1_test.jpeg --model xception
 
 即可开始对输入的摄像头图片进行识别，其中 images/1_text.jpeg表示的是输入的识别摄像头图片的路径，xception 为本次训练需要的模型，当上一步中环境配置完毕后，再输入命令,若系统中没有该模型，命令输入完毕后系统会自动下载该模型，下载完毕后继续完成训练，因此第一次识别时速度较慢，下载完模型之后的识别速度正常。
 
