@@ -1,0 +1,63 @@
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp2
+{
+    public partial class Form1 : Form
+    {
+        int num = 0;
+        int[] Array = new int[13];
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = int.Parse(textBox1.Text);
+            timer1.Enabled = true;
+            Console.WriteLine("开始生成");
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            num++;
+            label2.Text = "" + num;
+            Random ran = new Random();
+            for (int i = 0; i < 12; i++)
+            {
+                Array[i] = ran.Next(0, 10);
+            }
+            
+            //标志位 =（奇数位和的单倍+偶数倍和）%10
+            //标志位=0  -->校验位=0
+            //标志位!=0 -->校验位=10-标志位
+            
+            int EAN = ((Array[1] + Array[3] + Array[5] + Array[7] + Array[9] + Array[11]) * 3
+                        + (Array[0] + Array[2] + Array[4] + Array[6] + Array[8] + Array[10])) % 10;
+            if (EAN == 0)
+            {
+                Array[12] = 0;
+            }
+            else
+            {
+                Array[12] = 10 - EAN;
+            }
+            string EAN13 = "";
+            for (int i = 0; i < 13; i++)
+            {
+                EAN13 = EAN13 + Array[i];
+                Console.Write("a" + i + ":" + Array[i] + " ");
+            }
+            Console.WriteLine(EAN13);
+            File.AppendAllText("D:\\1.txt", "\r\n" + EAN13);
+        }
+    }
+}
