@@ -10,7 +10,11 @@
 
 #### 2、基于人脸识别的驾驶员状态预警系统
 
-#### 3、门禁系统（活体检测完善中）
+#### 3、门禁系统
+
+#### 4、实用工具（不定期更新）
+
+#### 5、参考资料（不定期更新）
 
 #### 0、MachineLearning（不定期更新）
 
@@ -22,7 +26,7 @@
 
 #### 1、危险物品检测
 
-  项目位于dangerousInspection文件夹中
+  项目位于DangerousInspection文件夹中
   
   项目中使用VGG16模型、VGG19模型、ResNet50模型、Inception V3模型、Xception模型
   
@@ -32,7 +36,7 @@
 
 #### 2、基于人脸识别的驾驶员状态预警系统
 
-  项目位于driverStatusPrediction文件夹中
+  项目位于DriverStatusPrediction文件夹中
 
   人脸识别+面部表情识别
 
@@ -44,11 +48,27 @@
   
 #### 3、门禁系统（活体检测完善中）
 
-  项目位于accessControl文件夹中
+  项目位于AccessControl文件夹中
   
   人脸识别+活体检测
   
   通过人脸识别检测是否为安全人员，通过活体检测避免照片攻击等攻击方式
+  
+#### 4、实用工具
+
+  项目位于Utilities文件夹中
+  
+  目前包含EAN13条形码生成
+  
+  EAN13条形码：给出EAN13条形码校验位计算方法及具体C#代码
+  
+#### 5、参考资料
+
+  项目位于References文件夹当中	
+  
+  目前包含SMD-CODES DATABOOK资料
+
+提交smd-codes.pdf文件
   
 #### 0、MachineLearning（不定期更新）
 
