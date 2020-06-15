@@ -2,6 +2,10 @@
 
 联系方式：shaoycamore@gmail.com  
 
+CSDN：```https://blog.csdn.net/qq_40902709```
+
+CSDN（包含算法、Qt、C#、Web相关内容）
+
 持续更新...
 
 ## 【目录】
