@@ -4,7 +4,7 @@
 
 CSDN：```https://blog.csdn.net/qq_40902709```
 
-CSDN（包含算法、Qt、C#、Web相关内容）
+CSDN（包含算法、图形化界面相关内容）
 
 持续更新...
 
